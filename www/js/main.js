@@ -379,9 +379,7 @@ function calcula(form) {
            //PRICE
             var saldoDevedor;     
            var quantidadeParcelasPagas = form.parcelasPagas.value;
-           prest                       = Math.round((pv * (Math.pow(1+i,np)) ) / (Math.pow(1+i,np)-1)* i );
-          // saldoDevedor =   prest*fvaPrice();// pv-(prest*quantidadeParcelasPagas)
-            
+           prest                       = Math.round((pv * (Math.pow(1+i,np)) ) / (Math.pow(1+i,np)-1)* i );            
           var n        = parseFloat(np-quantidadeParcelasPagas);
           var ind      = parseFloat(1+i);
           var base     = parseFloat(Math.pow(ind,n));
