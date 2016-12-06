@@ -72,6 +72,8 @@
 						<li><a href="calcularParcelaJurosMes.html">Calcular parcela de Juros em um mês especifico</a></li>
 						<li><a href="calcularParcelaAmortizacaoMes.html">Calcular parcela de amortização em um mês especifico</a></li>
 						<li><a href="calcularValorAmortizacaoAcumulada.html">Calcular valor das amortizações acumuladas</a></li>
+						<li><a href="calcularJurosAcumulados.html">Calcular valor dos juros acumulados</a></li>
+
 						<li><a href="contact.html">Contato</a></li>
 					</ul>
 				</div>
@@ -101,48 +103,87 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>Tabela Price</h2>
-							<table cellpadding="2" cellspacing="2">
-								<tr>
-									<td align="left">
-										Valor: </td><td><input type="text" name="valor" required="true"> 
-									</td>
+					<h2>Calculo Juros Acumulados</h2>
+							<form name="form"> 
 
-								</tr>
-								<tr>
-									<td  align="left">
-										Entrada: </td><td><input type="text" name="entrada" > 
-									</td>
-								</tr>
-								<tr>
-									<td  align="left">
-										Número de prestações: </td><td><input type="text" name="prestacoes" > 
-									</td >
-								</tr>
-								<tr>
-									<td align="left">
-										Taxa de juros (% ao mês):</td><td> <input type="text" name="taxa" > 
-									</td>
-								</tr>
-								<tr>
-									<td  align="left">
-										Quantidade de parcelas já pagas:</td><td> <input type="text" name="parcelasPagas" >
-									</td>
-								</tr>
-								<tr align="center">
-									<td colspan="2" >
-										<input type="submit" value="Calcular" onClick="calcula(form, 1)">
-									</td>
-								</tr>
-								<tr align="center">
-									<td colspan="2">
-										<input type="text" readOnly=true name="resposta">
-									</td>
-								</tr> 
-							</table>				
-					</div>
-			</div>
-			<div id="sac_result"></div>
+<table cellpadding="2" cellspacing="2">
+                            <tr >
+                                    <td colspan="2" align="center">
+                                        <select size="1" name="cmbTabela">
+
+                                        <option selected value="Selecione">Selecione a tabela</option>
+
+                                        <option value="1">SAC</option>
+
+                                        <option value="2">PRICE</option>
+
+                                        </select>
+                                    </td>
+
+                                </tr>
+                            <tr >
+                                    <td colspan="2" align="center">
+                                        <select size="1" name="cmbTipo">
+
+                                        <option selected value="Selecione">Selecione!</option>
+
+                                        <option value="10">Calcular do início até hoje</option>
+
+                                        <option value="11">Calcular em período especifico</option>
+
+                                        </select>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td align="left">
+                                        Valor: </td><td><input type="text" name="valor" required="true"> 
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td  align="left">
+                                        Entrada: </td><td><input type="text" name="entrada" > 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  align="left">
+                                        Número de prestações: </td><td><input type="text" name="prestacoes" > 
+                                    </td >
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        Taxa de juros (% ao mês):</td><td> <input type="text" name="taxa" > 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  align="left">
+                                        Quantidade de parcelas já pagas:</td><td> <input type="text" name="parcelasPagas" >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  align="left">
+                                        Calcular da parcela</td><td> <input type="text" name="inicial" >Até<input type="text" name="fim" >
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td>
+                                        <input type="button" value="Calcular" onClick="calcula(form)">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="Voltar ao Menu"  onClick="history.go(-1)">
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td colspan="2">
+                                        <input type="text" name="resposta" readOnly=true placeholder="Resposta">
+                                    </td>
+                                </tr>
+                            </table>
+<INPUT TYPE="HIDDEN"  name="op" value="calc"> 
+</FORM> 
+<div id="sac_result"></div>
 <div id="price_result"></div>
 	<footer id="gtco-footer" role="contentinfo">
 		<div class="row copyright">
